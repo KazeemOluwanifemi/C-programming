@@ -3,10 +3,10 @@
 
 int main(void){
    char answer = get_char("Do you agree? Y/N ");
-   if(answer == "Y"){
+   if(answer == 'Y'){
       printf("Agreed.");
    }
-   else if(answer == "N"){
+   else if(answer == 'N'){
       printf("Disagreed.");
    }
    else{
