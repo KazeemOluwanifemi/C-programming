@@ -1,15 +1,12 @@
 #include <stdio.h>
 #include "cs50.h"
 
-// void meow (void){
-//    printf("meow\n");
-// }
+// Prototyping: Informing your code of the existence of a function you haven't
+// declared yet
+// void meow (void);
 
 int main(void){
-   // for (int i = 0; i < 3; i++)
-   // {
-   //    meow();
-   // }
+      meow(3)`1```111111111111111111;
 
    // char answer = get_char("Do you agree? Y/N ");
 
@@ -29,16 +26,16 @@ int main(void){
    // Application of Abstraction
    
    // Without Abstraction
-   printf("Meow\n");
-   printf("Meow\n");
-   printf("Meow\n");
+   // printf("Meow\n");
+   // printf("Meow\n");
+   // printf("Meow\n");
 
    // With Abstraction(While Loop)
-   int i = 0;
-   while(i < 3){
-      printf("Meow\n");
-      i++;
-   }
+   // int i = 0;
+   // while(i < 3){
+   //    printf("Meow\n");
+   //    i++;
+   // }
 
  
    
@@ -52,4 +49,11 @@ int main(void){
    // else{
    //    printf("Input valid answer.");
    // }
+}
+
+void meow (int n){
+   for (int i = 0; i < n; i++)
+   {
+      printf("meow\n");
+   }
 }
