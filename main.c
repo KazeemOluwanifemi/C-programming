@@ -6,7 +6,7 @@
 // void meow (void);
 
 int main(void){
-      meow(3)`1```111111111111111111;
+      meow(3);
 
    // char answer = get_char("Do you agree? Y/N ");
 
