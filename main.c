@@ -5,8 +5,29 @@
 // declared yet
 // void meow (void);
 
+int get_positive_int(void);
+
 int main(void){
-      meow(3);
+   int i = get_positive_int();
+   printf("%i\n", i);
+}
+
+// Prompt user for positive integer
+int get_positive_int(void) 
+{
+   int n;
+   do
+   {
+      n = get_int("POstive Integer: ");
+   }
+   while (n<1);
+   return n;
+}
+
+
+
+
+   //    meow(3);
 
    // char answer = get_char("Do you agree? Y/N ");
 
@@ -49,11 +70,12 @@ int main(void){
    // else{
    //    printf("Input valid answer.");
    // }
-}
 
-void meow (int n){
-   for (int i = 0; i < n; i++)
-   {
-      printf("meow\n");
-   }
-}
+
+// void meow (int n){
+//    for (int i = 0; i < n; i++)
+//    {
+//       printf("meow\n");
+//    }
+// }
+
