@@ -18,7 +18,7 @@ int get_positive_int(void)
    int n;
    do
    {
-      n = get_int("POstive Integer: ");
+      n = get_int("Width: ");
    }
    while (n<1);
    return n;
