@@ -5,24 +5,40 @@
 // declared yet
 // void meow (void);
 
-int get_positive_int(void);
+// int get_positive_int(void);
 
 int main(void){
-   int i = get_positive_int();
-   printf("%i\n", i);
+   
+   
+
+   // if (i == true && j == true)
+   // {
+      for (int i = get_int("Enter width value: "); i == true;)
+      {
+        printf("#");
+      }
+      printf("\n");
+      for ( int j = get_int("Enter height value: "); j == true;)
+      {
+        printf("#");
+      } 
+   // }else{
+   //    return i;
+   //    return j;
+   // }
 }
 
-// Prompt user for positive integer
-int get_positive_int(void) 
-{
-   int n;
-   do
-   {
-      n = get_int("Width: ");
-   }
-   while (n<1);
-   return n;
-}
+// // Prompt user for positive integer
+// int get_positive_int(void) 
+// {
+//    int n;
+//    do
+//    {
+//       n = get_int("Width: ");
+//    }
+//    while (n<1);
+//    return n;
+// }
 
 
 
