@@ -15,6 +15,8 @@
 #include <math.h>
 
 int main(){
-    int numbersInput[] = {0,1,2,3,4,5,6,7,8,9};
-    printf("%d", numbersInput[4]);
+    printf("%s", "Input first and second operator: \n");
+    int operatorValues[2];
+    scanf("%i","i", &operatorValues[0], &operatorValues[1]);
+    printf("%i", "%i", operatorValues[0], operatorValues[1]);
 }
