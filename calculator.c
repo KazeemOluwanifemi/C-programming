@@ -15,8 +15,14 @@
 #include <math.h>
 
 int main(){
-    printf("%s", "Input first and second operator: \n");
-    int operatorValues[2];
-    scanf("%i","i", &operatorValues[0], &operatorValues[1]);
-    printf("%i", "%i", operatorValues[0], operatorValues[1]);
+    // Get operator values from users
+    printf("%s", "Input first operator: \n");
+    int firstValue = 0;
+    scanf("%i", &firstValue);
+
+    printf("%s", "Input second operator: \n");
+    int secondValue = 0;
+    scanf("%i", &secondValue);
+    
+    printf("%i", "%i", firstValue, secondValue); 
 }
