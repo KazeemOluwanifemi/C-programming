@@ -7,26 +7,52 @@
 
 // int get_positive_int(void);
 
-int main(void){
+int main()
+   {
+      int i = 2;
+      while (i<8)
+      {
+         printf("%d", i);
+         i++;
+      }
+      
+   }
    
    
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    // if (i == true && j == true)
    // {
-      for (int i = get_int("Enter width value: "); i == true;)
-      {
-        printf("#");
-      }
-      printf("\n");
-      for ( int j = get_int("Enter height value: "); j == true;)
-      {
-        printf("#");
-      } 
+      // for (int i = get_int("Enter width value: "); i == true;)
+      // {
+      //   printf("#");
+      // }
+      // printf("\n");
+      // for ( int j = get_int("Enter height value: "); j == true;)
+      // {
+      //   printf("#");
+      // } 
    // }else{
    //    return i;
    //    return j;
    // }
-}
 
 // // Prompt user for positive integer
 // int get_positive_int(void) 

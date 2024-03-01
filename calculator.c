@@ -7,6 +7,7 @@
 // Specify the Algorithm
 // *Take input from user 
 // Perform operations based on the user's input
+// Switch case
 // Error Handling 
 
 #include <stdio.h>
@@ -15,7 +16,7 @@
 #include <math.h>
 
 int main(){
-    // Get operator values from users
+    // Get integer values from users
     printf("%s", "Input first operator: \n");
     int firstValue = 0;
     scanf("%i", &firstValue);
@@ -23,6 +24,12 @@ int main(){
     printf("%s", "Input second operator: \n");
     int secondValue = 0;
     scanf("%i", &secondValue);
-    
-    printf("%i", "%i", firstValue, secondValue); 
+
+
+    // Get arithmetic operator from user
+    printf("%s", "Select an operator from the following: \n +,-,/,*");
+    char userOperator = '-';
+    scanf("%c", &userOperator);
+
+    printf("%c", userOperator);
 }
