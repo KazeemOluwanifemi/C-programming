@@ -7,8 +7,9 @@
 // *Take input from user 
 // Perform operations based on the user's input
 // Switch case
+// Create Function
 // Loop Events
-// Error Handling 
+// Error Handling
 
 #include <stdio.h>
 #include <string.h>
@@ -39,20 +40,31 @@ int calculator(char operatorVal, int firstValue, int secondValue)
         default:
             printf("Error!! Please enter a valid operator.");
     }
+    return 0;
 }
 
 int main(){
-// Get integer values from users
+// Ask user if he/she would like to make a calculation
+    printf("%s", "Would you like to use the calculator? Y/N:\n");
+    char userChoice;
+    scanf(" %c", &userChoice);
+
+    if(userChoice == 'Y'){
+    // Get integer values from users
     printf("%s", "Input two operands: \n");
     int firstValue = 0;
     int secondValue = 0;
     scanf("%i %i", &firstValue, &secondValue);
 
-// Get operator from user
+    // Get operator from user
     printf("%s", "Select an operator from the following: \n +,-,/,*,^\n");
     char operatorVal;
     scanf(" %c", &operatorVal);
 
-// Calculate by calling the calclator function
+    // Calculate by calling the calclator function
     int result = calculator(operatorVal, firstValue, secondValue);
+    }
+    else{
+        printf("Alright, have a good day then :)");
+    }
 }
