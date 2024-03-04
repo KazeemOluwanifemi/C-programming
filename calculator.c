@@ -16,7 +16,18 @@
 #include <math.h>
 
 int main(){
-    // Get integer values from users
+
+    // // Calculation operations
+    // // addition
+    // int addition= firstValue + secondValue;
+    // // subtraction
+    // int subtraction = firstValue - secondValue;
+    // // multiplication
+    // int multiplication = firstValue * secondValue;
+    // // division
+    // float division = (float) firstValue/secondValue;
+
+// Get integer values from users
     printf("%s", "Input first operator: \n");
     int firstValue = 0;
     scanf("%i", &firstValue);
@@ -25,11 +36,27 @@ int main(){
     int secondValue = 0;
     scanf("%i", &secondValue);
 
+// Get operator from user
+    printf("%s", "Select an operator from the following: \n +,-,/,*\n");
+    char operatorVal;
+    scanf(" %c", &operatorVal);
 
-    // Get arithmetic operator from user
-    printf("%s", "Select an operator from the following: \n +,-,/,*");
-    char userOperator = '-';
-    scanf("%c", &userOperator);
-
-    printf("%c", userOperator);
+// Calculate based on the user's operator
+    switch(operatorVal)
+    {
+        case '-':
+            printf("%i - %i = %i", firstValue, secondValue, firstValue - secondValue);
+            break;
+        case '+':
+            printf("%i + %i = %i", firstValue, secondValue, firstValue + secondValue);
+            break;
+        case '/':
+            printf("%i / %i = %i", firstValue, secondValue, firstValue / secondValue);
+            break;
+        case '*':
+            printf("%i * %i = %i", firstValue, secondValue, firstValue * secondValue);
+            break;
+        // default:
+        //     printf("Error!! Please enter a valid operator.");
+    }
 }
