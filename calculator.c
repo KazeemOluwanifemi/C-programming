@@ -67,4 +67,5 @@ int main(){
     else{
         printf("Alright, have a good day then :)");
     }
+    return 0;
 }
