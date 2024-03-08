@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<string.h>
+#include<stdlib.h>
 
 // operations to be carried out by this program:
 // Add student information
@@ -15,10 +16,24 @@
 // -> Residential Info
 //    Hall, Room Number
 
-int addName(){};
-int removeName(){};
-int listName(){};
-int searchMatNO(){};
+int addData();
+int removeData(){};
+int listData(){};
+int searchMatNo(){};
+
+int addData(){
+    // Use struct to accept and organize data
+    char studFName[20], studLName[20], studMName[20];
+    printf("\t\t\t\t\t\t\n|----------PERSONAL INFORMATION DATABASE----------| \t\t\t\t\t\t\n\n");
+    printf("Input Firstname: \n");
+    scanf("%s", &studFName);
+
+    printf("Input Lastname: \n");
+    scanf("%s", &studLName);
+
+    printf("Input Middlename: \n");
+    scanf("%s", &studMName);
+}
 
 int main(){
     // Create main screen
@@ -38,13 +53,13 @@ int main(){
     // Perform operation based on user's choice
     switch(choice){
         case 1:
-            addName();
+            addData();
             break;
         case 2:
-            removeName();
+            removeData();
             break;
         case 3:
-            listName();
+            listData();
             break;
         case 4:
             searchMatNo();
@@ -52,5 +67,4 @@ int main(){
         case 5:
             exit(0);
     }
-    // functions
 }
