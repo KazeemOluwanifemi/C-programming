@@ -21,10 +21,16 @@ int removeData(){};
 int listData(){};
 int searchMatNo(){};
 
+struct studData{
+    int studAge;
+    int studDOB;
+};
+
 int addData(){
     // Use struct to accept and organize data
     char studFName[20], studLName[20], studMName[20];
     printf("\t\t\t\t\t\t\n|----------PERSONAL INFORMATION DATABASE----------| \t\t\t\t\t\t\n\n");
+    
     printf("Input Firstname: \n");
     scanf("%s", &studFName);
 
