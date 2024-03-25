@@ -10,7 +10,7 @@
 // Student information to be recorded
 // Categories:
 // -> Personal Info
-    // 1. Name, DOB, Age, State of Origin
+    // 1. Name, DOB(has to be a struct), Age, State of Origin
 // -> Academic Info
     // MatNo, RegNo, College of Study, CGPA, Deparment
 // -> Residential Info
@@ -21,24 +21,53 @@ int removeData(){};
 int listData(){};
 int searchMatNo(){};
 
-struct studData{
-    int studAge;
-    int studDOB;
-};
+struct studData {
+   struct studName{
+    char fName[35];
+    char mName[35];
+    char lName[35];
+   } full;
+   int studAge;
+   struct studDOB{
+    int day;
+    int month;
+    int year;
+   } formatted;
+} stud1;
 
 int addData(){
     // Use struct to accept and organize data
     char studFName[20], studLName[20], studMName[20];
     printf("\t\t\t\t\t\t\n|----------PERSONAL INFORMATION DATABASE----------| \t\t\t\t\t\t\n\n");
     
-    printf("Input Firstname: \n");
-    scanf("%s", &studFName);
+    printf("Enter your Firstname: ");
+      scanf("%s", &stud1.full.fName);
+      
+      printf("Enter your Middlename: ");
+      scanf("%s", &stud1.full.mName);
+      
+      printf("Enter your Lastname: ");
+      scanf("%s", &stud1.full.lName);
 
-    printf("Input Lastname: \n");
-    scanf("%s", &studLName);
+      printf("Enter your age: ");
+      scanf("%i", &stud1.studAge);
 
-    printf("Input Middlename: \n");
-    scanf("%s", &studMName);
+      printf("Enter your day of birth: ");
+      scanf("%i", &stud1.formatted.day);
+
+      printf("Enter your month of birth: ");
+      scanf("%i", &stud1.formatted.month);
+
+      printf("Enter your year of birth: ");
+      scanf("%i", &stud1.formatted.year);
+      
+      
+
+      printf("%s ", stud1.full.fName);
+      printf("%s ", stud1.full.mName);
+      printf("%s ", stud1.full.lName);
+      printf("%i ", stud1.studAge);
+      printf("%i", stud1.formatted.day + stud1.formatted.month + stud1.formatted.year);
 }
 
 int main(){

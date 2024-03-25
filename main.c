@@ -22,31 +22,10 @@ struct studData {
 
 // structure initialization using Initializer list
 // struct studName full= {};
-struct studData stud1 = {19, 10112006};
 
 // Use of strcpy to use strings in structures
 
 int main()
    {
-      printf("Enter your Firstname: ");
-      scanf("%s", &stud1.full.fName);
       
-      printf("Enter your Middlename: ");
-      scanf("%s", &stud1.full.mName);
-      
-      printf("Enter your Lastname: ");
-      scanf("%s", &stud1.full.lName);
-
-      printf("Enter your age: ");
-      scanf("%i", &stud1.studAge);
-
-      printf("Enter your date of birth: ");
-      scanf("%i", &stud1.studDOB);
-      
-
-      printf("%s ", stud1.full.fName);
-      printf("%s ", stud1.full.mName);
-      printf("%s", stud1.full.lName);
-      printf("%i", stud1.studAge);
-      printf("%i", stud1.studDOB);
    }
