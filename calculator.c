@@ -32,10 +32,12 @@ int calculator(char operatorVal, int firstValue, int secondValue)
             printf("%i / %i = %i", firstValue, secondValue, firstValue / secondValue);
             break;
         case '*':
-            printf("%i * %i = %i", firstValue, secondValue, firstValue * secondValue);
+            printf("%i * %i = %i",
+            firstValue, secondValue, firstValue * secondValue);
             break;
         case '^':
-            printf("%i * %i = %i", firstValue, firstValue, firstValue * firstValue);
+            printf("%i * %i = %i",
+            firstValue, firstValue, firstValue * firstValue);
             break;
         default:
             printf("Error!! Please enter a valid operator.");
@@ -43,10 +45,11 @@ int calculator(char operatorVal, int firstValue, int secondValue)
     return 0;
 }
 
+char userChoice;
 int main(){
 // Ask user if he/she would like to make a calculation
     printf("%s", "Would you like to use the calculator? Y/N:\n");
-    char userChoice;
+    
     scanf(" %c", &userChoice);
 
     if(userChoice == 'Y'){

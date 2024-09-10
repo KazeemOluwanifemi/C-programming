@@ -29,9 +29,9 @@ struct studData {
    } full;
    int studAge;
    struct studDOB{
-    int day;
-    int month;
-    int year;
+    char day[3];
+    char month[4];
+    char year[3];
    } formatted;
 } stud1;
 
@@ -53,13 +53,13 @@ int addData(){
       scanf("%i", &stud1.studAge);
 
       printf("Enter your day of birth: ");
-      scanf("%i", &stud1.formatted.day);
+      scanf("%s", &stud1.formatted.day);
 
       printf("Enter your month of birth: ");
-      scanf("%i", &stud1.formatted.month);
+      scanf("%s", &stud1.formatted.month);
 
       printf("Enter your year of birth: ");
-      scanf("%i", &stud1.formatted.year);
+      scanf("%s", &stud1.formatted.year);
       
       
 
