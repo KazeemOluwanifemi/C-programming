@@ -38,55 +38,74 @@ struct studData {
 int addData(){
     // Use struct to accept and organize data
     char studFName[20], studLName[20], studMName[20];
+    char userConfirmation;
     printf("\t\t\t\t\t\t\n|----------PERSONAL INFORMATION DATABASE----------| \t\t\t\t\t\t\n\n");
     
     printf("Enter your Firstname: ");
-      scanf("%s", &stud1.full.fName);
+    scanf("%s", stud1.full.fName);
       
-      printf("Enter your Middlename: ");
-      scanf("%s", &stud1.full.mName);
+    printf("Enter your Middlename: ");
+    scanf("%s", stud1.full.mName);
       
-      printf("Enter your Lastname: ");
-      scanf("%s", &stud1.full.lName);
+    printf("Enter your Lastname: ");
+    scanf("%s", stud1.full.lName);
 
-      printf("Enter your age: ");
-      scanf("%i", &stud1.studAge);
+    printf("Enter your age: ");
+    scanf("%i", &stud1.studAge);
 
-      printf("Enter your day of birth: ");
-      scanf("%s", &stud1.formatted.day);
+    printf("Enter your day of birth: ");
+    scanf("%s", stud1.formatted.day);
 
-      printf("Enter your month of birth: ");
-      scanf("%s", &stud1.formatted.month);
+    printf("Enter your month of birth: ");
+    scanf("%s", stud1.formatted.month);
 
-      printf("Enter your year of birth: ");
-      scanf("%s", &stud1.formatted.year);
+    printf("Enter your year of birth: ");
+    scanf("%s", stud1.formatted.year);
+
+    //   User Details confirmation
       
-      
+    printf("%s %s \n", "Student's Firstname:", stud1.full.fName);
+    printf("%s %s \n", "Student's Middlename:", stud1.full.mName);
+    printf("%s %s \n", "Student's Lastname:", stud1.full.lName);
+    printf("%s %i \n", "Student's Age:", stud1.studAge);
+    printf("%s %s-%s-%s \n","Student's DOB:", stud1.formatted.day, stud1.formatted.month, stud1.formatted.year);
 
-      printf("%s ", stud1.full.fName);
-      printf("%s ", stud1.full.mName);
-      printf("%s ", stud1.full.lName);
-      printf("%i ", stud1.studAge);
-      printf("%i", stud1.formatted.day + stud1.formatted.month + stud1.formatted.year);
+    printf("%s", "Please confirm your details, Y/N:");
+    scanf(" %c", &userConfirmation);
+
+    if (userConfirmation == 'Y'){
+        printf("%s", "Your details have been saved successfully!");
+        return 1;
+    } else if (userConfirmation == 'N'){
+        printf("%s", "Please try again");
+        return 1;
+    } else {
+        printf("%s", "Invalid input, please try again.");
+        return 1;
+    }
 }
 
 int main(){
-    // Create main screen
-    printf("%s", "\t\t\t\t\t\t |----------STUDENT DATABASE MANAGEMENT SYSTEM----------| \t\t\t\t\t\t\n\n");
-    printf("%s", "\t\t\t\t\t\t\t\t 1. Add Student Data \n");
-    printf("%s", "\t\t\t\t\t\t\t\t 2. Delete Student Data\n");
-    printf("%s", "\t\t\t\t\t\t\t\t 3. List Student Data\n");
-    printf("%s", "\t\t\t\t\t\t\t\t 4. Search with Matriculation Number\n");
-    printf("%s", "\t\t\t\t\t\t\t\t 5. Exit\n");
-    printf("%s", "\t\t\t\t\t\t _______________________________________________________ \t\t\t\t\t\t\n\n");
+    // Main screen
+    int running = 1;
 
-    // Ask user to choose an option
-    printf("%s", "Pick an option: ");
-    int choice;
-    scanf("%i", &choice);
+    while (running)
+    {
+        printf("%s", "\t\t\t\t\t\t |----------STUDENT DATABASE MANAGEMENT SYSTEM----------| \t\t\t\t\t\t\n\n");
+        printf("%s", "\t\t\t\t\t\t\t\t 1. Add Student Data \n");
+        printf("%s", "\t\t\t\t\t\t\t\t 2. Delete Student Data\n");
+        printf("%s", "\t\t\t\t\t\t\t\t 3. List Student Data\n");
+        printf("%s", "\t\t\t\t\t\t\t\t 4. Search with Matriculation Number\n");
+        printf("%s", "\t\t\t\t\t\t\t\t 5. Exit\n");
+        printf("%s", "\t\t\t\t\t\t _______________________________________________________ \t\t\t\t\t\t\n\n");
 
-    // Perform operation based on user's choice
-    switch(choice){
+        // Ask user to choose an option
+        printf("%s", "Pick an option: ");
+        int choice;
+        scanf("%i", &choice);
+
+        // Perform operation based on user's choice
+        switch(choice){
         case 1:
             addData();
             break;
@@ -101,5 +120,6 @@ int main(){
             break;
         case 5:
             exit(0);
+        }
     }
 }
