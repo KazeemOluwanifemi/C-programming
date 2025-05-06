@@ -17,9 +17,13 @@
 //    Hall, Room Number
 
 int addData();
-int removeData(){};
-int listData(){};
+int removeData();
+int listData();
 int searchMatNo(){};
+
+int noOfStudents;
+char userConfirmation;
+int i = 0;
 
 struct studData {
    struct studName{
@@ -30,60 +34,101 @@ struct studData {
    int studAge;
    struct studDOB{
     char day[3];
-    char month[4];
+    char month[10];
     char year[3];
    } formatted;
-} stud1;
+} stud[400];
+
+int activeNoOfStudents = sizeof(stud)/sizeof(stud[0]);
 
 int addData(){
     // Use struct to accept and organize data
     char studFName[20], studLName[20], studMName[20];
-    char userConfirmation;
-    printf("\t\t\t\t\t\t\n|----------PERSONAL INFORMATION DATABASE----------| \t\t\t\t\t\t\n\n");
+
+    printf("How many students? ");
+    scanf(" %d", &noOfStudents);
+
+    for (int i = 0; i < noOfStudents; i++){
+        printf("\t\t\t\t\t\t\n|----------PERSONAL INFORMATION DATABASE----------| \t\t\t\t\t\t\n\n");
     
-    printf("Enter your Firstname: ");
-    scanf("%s", stud1.full.fName);
+        printf("Enter your Firstname: ");
+        scanf("%s", stud[i].full.fName);
       
-    printf("Enter your Middlename: ");
-    scanf("%s", stud1.full.mName);
+        printf("Enter your Middlename: ");
+        scanf("%s", stud[i].full.mName);
       
-    printf("Enter your Lastname: ");
-    scanf("%s", stud1.full.lName);
+        printf("Enter your Lastname: ");
+        scanf("%s", stud[i].full.lName);
 
-    printf("Enter your age: ");
-    scanf("%i", &stud1.studAge);
+        printf("Enter your age: ");
+        scanf("%i", &stud[i].studAge);
 
-    printf("Enter your day of birth: ");
-    scanf("%s", stud1.formatted.day);
+        printf("Enter your day of birth: ");
+        scanf("%s", stud[i].formatted.day);
 
-    printf("Enter your month of birth: ");
-    scanf("%s", stud1.formatted.month);
+        printf("Enter your month of birth: ");
+        scanf("%s", stud[i].formatted.month);
 
-    printf("Enter your year of birth: ");
-    scanf("%s", stud1.formatted.year);
+        printf("Enter your year of birth: ");
+        scanf("%s", stud[i].formatted.year);
 
-    //   User Details confirmation
-      
-    printf("%s %s \n", "Student's Firstname:", stud1.full.fName);
-    printf("%s %s \n", "Student's Middlename:", stud1.full.mName);
-    printf("%s %s \n", "Student's Lastname:", stud1.full.lName);
-    printf("%s %i \n", "Student's Age:", stud1.studAge);
-    printf("%s %s-%s-%s \n","Student's DOB:", stud1.formatted.day, stud1.formatted.month, stud1.formatted.year);
+        //   User Details confirmation
+        printf("\t\t\t\t\t\t\n|------STUDENT'S DETAILS------| \t\t\t\t\t\t\n\n");  
+        printf("%s %s \n", "Student's Firstname:", stud[i].full.fName);
+        printf("%s %s \n", "Student's Middlename:", stud[i].full.mName);
+        printf("%s %s \n", "Student's Lastname:", stud[i].full.lName);
+        printf("%s %i \n", "Student's Age:", stud[i].studAge);
+        printf("%s %s-%s-%s \n","Student's DOB:", stud[i].formatted.day, stud[i].formatted.month, stud[i].formatted.year);
+        printf("\t\t\t\t\t\t\n|-----------------------------| \t\t\t\t\t\t\n\n"); 
 
-    printf("%s", "Please confirm your details, Y/N:");
-    scanf(" %c", &userConfirmation);
+        printf("%s", "Please confirm your details, Y/N:");
+        scanf(" %c", &userConfirmation);
 
-    if (userConfirmation == 'Y'){
-        printf("%s", "Your details have been saved successfully!");
-        return 1;
-    } else if (userConfirmation == 'N'){
-        printf("%s", "Please try again");
-        return 1;
-    } else {
-        printf("%s", "Invalid input, please try again.");
-        return 1;
+        if (userConfirmation == 'Y' && i == noOfStudents-1){
+            printf("%s", "Your details have been saved successfully!\n");
+            printf("%s", "What would you like to do now?\n\n");
+        } else if (userConfirmation == 'Y' && i != noOfStudents-1){
+            printf("%s", "Your details have been saved successfully!\n");
+            printf("%s", "Please enter the next set of details\n");
+        } else if (userConfirmation == 'N' && i != noOfStudents-1){
+            printf("%s", "Please try again\n");
+        } else if (userConfirmation == 'N' && i == noOfStudents-1){
+            printf("%s", "Please try again\n");
+            return 1;
+        } else {
+            printf("%s", "Invalid input, please try again.\n");
+            return 1;
+        }   
     }
 }
+
+int removeData(){
+    printf("This option isn't available yet, please try again later");
+}
+
+int listData(){
+    while (i < activeNoOfStudents)
+    {
+        if (i == 0){
+            printf("Please enter student data first\n");
+            return 1;
+        } else{
+            printf("\t\t\t\t\t\t\n|------STUDENT'S DETAILS------| \t\t\t\t\t\t\n\n");  
+            printf("%s %s \n", "Student's Firstname:", stud[i].full.fName);
+            printf("%s %s \n", "Student's Middlename:", stud[i].full.mName);
+            printf("%s %s \n", "Student's Lastname:", stud[i].full.lName);
+            printf("%s %i \n", "Student's Age:", stud[i].studAge);
+            printf("%s %s-%s-%s \n","Student's DOB:", stud[i].formatted.day, stud[i].formatted.month, stud[i].formatted.year);
+            printf("\t\t\t\t\t\t\n|-----------------------------| \t\t\t\t\t\t\n\n");
+        }
+        i++;
+    } 
+}
+
+int searchMatno(){
+    printf("This option isn't available yet, please try again later");
+}
+
 
 int main(){
     // Main screen
