@@ -1,44 +1,18 @@
 #include<stdio.h>
 
 int main(){
-    // char randomCharacter = 'akvshjgds';
-    // printf("%c", randomCharacter);
+    int arr[] = {10,20,30,40,50,60,70,80};
+    int i;
+    int len = sizeof(arr)/sizeof(arr[i]);
+    int sum;
 
-    char studName[] = "Nifemi";
-    char studName[] = "notNIfemi";
-    char course[] = "EEE";
-    int matNo = 2268890;
+    // printf("%d", len);
 
-    struct idCard {
-        char studName[20];
-        char course[20];
-        int matNo;  
-    };
+    for(i = 0; i <= len; i+2){
+        sum = arr[i] + arr[i + 1];
+    }
 
-    struct idCard stud1 = {"Kazeem", "EEE", 220045};
+    printf("%d", sum);
 
-    printf("%s ", stud1.matNo);
 }
 
-    //  struct leader
-    //     {
-    // //     char *lead;
-    //     int born;
-    // };
-    // struct leader leader11 = {"John", 1988};
-    // struct leader leader12 = {"notJohn"};
-    // printf("%s %d, 12.lead, 11.born");
-
-    // char boy[20] = "I am a boy.";
-
-    // int random[4] = {2,5,8,'8'};
-
-    // printf("%i", random[0]);
-
-//     struct studName{
-//     char fName[35];
-//     char mName[35];
-//     char lName[35];
-//    } person1, person2;
-
-//    printf("%s", person1.fName);
